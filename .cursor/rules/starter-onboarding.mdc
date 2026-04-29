@@ -1,0 +1,40 @@
+---
+description: Быстрый онбординг LLM для starter-проекта zod+nest
+alwaysApply: true
+---
+
+# zod+nest starter onboarding
+
+Этот репозиторий — шаблон contract-first разработки: один `shared/contract.ts` должен оставаться источником правды для клиента, сервера и БД.
+
+## Быстрый контекст
+
+- Frontend: `client` (React + Vite + ts-rest client).
+- Backend: `server` (NestJS + `@ts-rest/nest`).
+- Shared: `shared` (Zod-схемы и API-контракт).
+- DB: SQLite + Drizzle (`server/src/db/schema.ts`, `server/drizzle/*`).
+
+## Инварианты starter-проекта
+
+1. Любое изменение модели начинается с `shared/contract.ts`.
+2. После изменения контракта синхронизируй `server/src/db/schema.ts`, репозиторий и клиентские формы.
+3. Для изменений БД используй миграции Drizzle, не редактируй старые миграции задним числом.
+4. В Nest-обработчиках сохраняй соответствие `@TsRestHandler(..., { validateResponses: true })`.
+
+## Рабочие команды (Windows PowerShell)
+
+- Выполняй команды по одной (без `&&`).
+- Server:
+  - `npm run start:dev`
+  - `npm run db:generate`
+  - `npm run db:migrate`
+  - `npm run db:seed`
+- Client:
+  - `npm run dev`
+
+## Что проверять перед завершением задачи
+
+- Контракт, API-обработчики и репозиторий согласованы по полям и статус-кодам.
+- Миграции применимы к существующей SQLite-базе.
+- UI в `client/src/App.tsx` не ломает CRUD-поток.
+- Нет новых lint/type ошибок в измененных файлах.
