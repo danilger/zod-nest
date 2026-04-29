@@ -1,0 +1,1 @@
+ALTER TABLE `pokemon` ADD `description` text NOT NULL DEFAULT '';

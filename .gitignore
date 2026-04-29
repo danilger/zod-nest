@@ -4,9 +4,12 @@ node_modules/
 # Сборка по приложениям
 server/dist/
 server/build/
+server/data/
+
 client/dist/
 client/dist-ssr/
 shared/dist/
+
 
 # Логи
 logs/
@@ -62,6 +65,8 @@ pids/
 *.pid
 *.seed
 *.pid.lock/
+server/data/*.sqlite
+server/data/*.sqlite-*
 
 # Node diagnostic reports
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
