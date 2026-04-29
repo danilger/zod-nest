@@ -1,0 +1,67 @@
+# Dependencies (любой пакет в монорепо)
+node_modules/
+
+# Сборка по приложениям
+server/dist/
+server/build/
+client/dist/
+client/dist-ssr/
+shared/dist/
+
+# Логи
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Тесты / покрытие
+server/coverage/
+server/.nyc_output/
+
+# IDE
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Переменные окружения
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Vite (client)
+*.local
+
+# Временные каталоги
+.temp/
+.tmp/
+
+# Runtime
+pids/
+*.pid
+*.seed
+*.pid.lock/
+
+# Node diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
